@@ -9,14 +9,14 @@ class DestinationsContainer extends Component {
     componentDidMount(){
         this.props.fetchDestinations()
     }
-    
+
     render() {
         return (
             <div>
                 <h2>Destinations</h2>
-                <Destinations />
-
+                <Destinations destinations={this.props.destinations} />
                 <DestinationForm />
+                
             </div>
         )
     }
