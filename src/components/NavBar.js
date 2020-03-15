@@ -7,7 +7,7 @@ const link = {
     margin: '0 6px 6px',
     background: 'gray',
     textDecorations: 'none',
-    color: 'blue'
+    color: 'white'
 }
 
 const NavBar = () => {

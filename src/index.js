@@ -37,7 +37,6 @@ ReactDOM.render(
           <Route exact path='/asia' component={AsiaContainer} />
           <Route exact path='/africa' component={AfricaContainer} />
           <Route exact path='/australia' component={AustraliaContainer} />
-
         </Switch>
       </Router>  
     </Provider>, 

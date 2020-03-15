@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import Destination from '../components/Destination'
+import {fetchDestinations} from '../actions/fetchDestinations'
 
 class NorthAmericaContainer extends Component {
 
+    componentDidMount(){
+        this.props.fetchDestinations()
+    }
+
+    handleOnClick(e){
+
+    }
+    
     render() {
 
         const filteredDestinations=this.props.destinations.filter(destination => destination.location === 'North America')
 
         const destinations=filteredDestinations.map(destination => {
-           return <li>{destination.name}</li> 
+           return <li><Destination key={destination.id} name={destination.name} handleClick={this.handleOnClick}/><br/></li> 
         })
 
         return (
             <div>
+                <h2>North American Destinations</h2>
+                <br/>
                 <ul style={{listStyleType: "none"}}>
                     {destinations}
                 </ul> 
@@ -26,4 +38,4 @@ const mapStatetoProps = state => {
         destinations: state.destinationReducer.destinations
     }
 }
-export default connect(mapStatetoProps)(NorthAmericaContainer)
+export default connect(mapStatetoProps,{fetchDestinations})(NorthAmericaContainer)

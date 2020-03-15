@@ -10,11 +10,16 @@ class DestinationsContainer extends Component {
         this.props.fetchDestinations()
     }
 
+    handleOnClick(e){
+
+    }
+
     render() {
         return (
             <div>
                 <h2>Destinations</h2>
-                <Destinations destinations={this.props.destinations} />
+                <br/>
+                <Destinations destinations={this.props.destinations} handleThisClick={this.handleOnClick}/>
                 <DestinationForm />
                 
             </div>

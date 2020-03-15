@@ -3,7 +3,8 @@ import React from 'react'
 const Home = () => {
     return (
         <div>
-            Welcome to Destination Attractions!
+            <br/>
+            <h1>Welcome to Destination Attractions!</h1>
         </div>
     )
 }
