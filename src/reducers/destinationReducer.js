@@ -16,6 +16,20 @@ export default (
                     loading: false
                 }
 
+            case 'ADD_DESTINATION':
+                console.log('got dest.')
+                return {
+                    ...state,
+                    loading: true
+                }
+
+            case 'ADDED_DESTINATION':
+                console.log('added dest')
+                return {
+                    destination: [...state.destinations, action.payload],
+                    loading: false
+                }
+
             default:
                 return state
         }

@@ -1,4 +1,6 @@
 import React from 'react'
+import AttractionsContainer from '../containers/AttractionsContainer'
+
 
 const Destination = (props) => {
 
@@ -7,6 +9,7 @@ const Destination = (props) => {
     return (
         <div>
            <button variant="outline-primary" onClick={props.handleClick} id={name}>{name}</button>
+            <AttractionsContainer attractions={props.attractions}/>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Destination from '../components/Destination'
 import {fetchDestinations} from '../actions/fetchDestinations'
+import DestinationForm from '../components/DestinationForm'
 
 class AsiaContainer extends Component {
 
@@ -18,11 +19,12 @@ class AsiaContainer extends Component {
         const filteredDestinations=this.props.destinations.filter(destination => destination.location === 'Asia')
 
         const destinations=filteredDestinations.map(destination => {
-           return <li><Destination key={destination.id} name={destination.name} handleClick={this.handleOnClick}/><br/></li> 
+           return <li><Destination key={destination.id} name={destination.name} attractions={destination.attractions} handleClick={this.handleOnClick}/><br/></li> 
         })
 
         return (
             <div>
+                <DestinationForm location='Asia' />
                 <h2>Asian Destinations</h2>
                 <br/>
                 <ul style={{listStyleType: "none"}}>
@@ -35,7 +37,8 @@ class AsiaContainer extends Component {
 
 const mapStatetoProps = state => {
     return {
-        destinations: state.destinationReducer.destinations
+        destinations: state.destinationReducer.destinations,
+        loading: state.destinationReducer.loading
     }
 }
 export default connect(mapStatetoProps,{fetchDestinations})(AsiaContainer)

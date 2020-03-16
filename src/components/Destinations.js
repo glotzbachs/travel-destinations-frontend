@@ -18,13 +18,13 @@ class Destinations extends Component {
         // Changed to a NavBar!!
 
         const destinations = this.props.destinations.map(destination => {
-           return <li><Destination key={destination.id} name={destination.name} handleClick={this.props.handleThisClick}/><br/></li> 
+           return <li><Destination key={destination.id} {...destination} handleClick={this.props.handleThisClick}/><br/></li> 
         })
 
         return (
             <div>
                 {/* {buttons}
-                <hr></hr> */}
+                <hr></hr>   Navbar */ } 
 
                 <ul style={{listStyleType: "none"}}>
                     {destinations}
