@@ -20,11 +20,13 @@ import AustraliaContainer from './containers/AustraliaContainer';
 import TropicsContainer from './containers/TropicsContainer';
 import DestinationsContainer from './containers/DestinationsContainer';
 import NavBar from './components/NavBar'
+import DestinationInfo from './containers/DestinationInfo'
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
+      
       <Router>
         <NavBar />
         <Switch>
@@ -37,6 +39,7 @@ ReactDOM.render(
           <Route exact path='/asia' component={AsiaContainer} />
           <Route exact path='/africa' component={AfricaContainer} />
           <Route exact path='/australia' component={AustraliaContainer} />
+          <Route exact path='/destinations/:id' component={DestinationInfo} />
         </Switch>
       </Router>  
     </Provider>, 

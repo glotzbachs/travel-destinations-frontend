@@ -4,13 +4,9 @@ import {connect} from 'react-redux'
 
 class DestinationForm extends Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            name: '',
-            location: this.props.location ? this.props.location : 'Africa',
-            // description: ''
-        }
+    state = {
+        name: '',
+        location: this.props.location ? this.props.location : 'Africa',
     }
     
     handleChange = (e) => {
@@ -33,7 +29,7 @@ class DestinationForm extends Component {
         this.props.addDestination(destination)
         this.setState({
             name: '',
-            location: this.props.location ? this.props.location : 'Africa',
+            location: this.props.location ? this.props.location : 'Africa'
         })
     }
 

@@ -8,29 +8,22 @@ import AttractionsContainer from './AttractionsContainer'
 
 class DestinationsContainer extends Component {
 
-    state = {
-        location: ''
-    }
-
     componentDidMount(){
         this.props.fetchDestinations()
-    }
-
-    handleOnClick = (e) => {
-
     }
 
     render() {
         return (
             <div>
-                <DestinationForm handleSubmit={this.handleOnSubmit}/>
+                <DestinationForm />
                 <h2>Destinations</h2>
                 <br/>
-                <Destinations destinations={this.props.destinations} handleThisClick={this.handleOnClick}/>  
+                <Destinations destinations={this.props.destinations} />  
             </div>
         )
     }
 }
+
 const mapStatetoProps = (state) => {
     return {
       destinations: state.destinationReducer.destinations,

@@ -14,9 +14,10 @@ export default (
                 return {
                     destinations: action.payload,
                     loading: false
-                }
+                }    
 
             case 'ADD_DESTINATION':
+                // debugger
                 console.log('got dest.')
                 return {
                     ...state,
@@ -24,9 +25,10 @@ export default (
                 }
 
             case 'ADDED_DESTINATION':
+                // debugger
                 console.log('added dest')
                 return {
-                    destination: [...state.destinations, action.payload],
+                    destinations: [...state.destinations, action.payload],
                     loading: false
                 }
 

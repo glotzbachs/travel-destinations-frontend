@@ -8,6 +8,8 @@ import AustraliaContainer from './containers/AustraliaContainer';
 import SouthAmericaContainer from './containers/SouthAmericaContainer';
 import NorthAmericaContainer from './containers/NorthAmericaContainer';
 import TropicsContainer from './containers/TropicsContainer';
+import {connect} from 'react-redux'
+import {fetchDestinations} from './actions/fetchDestinations'
 
 
 
@@ -35,4 +37,6 @@ class App extends Component {
   }
 }
 
-export default App;
+
+
+export default connect(null, {fetch})(App);

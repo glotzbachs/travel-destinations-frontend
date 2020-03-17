@@ -1,17 +1,23 @@
 export const addDestination = (destination) => {
-    return (dispatch) => {
-        dispatch({type:'ADD_DESTINATION'}, destination)
-        fetch('/destinations', {
+    
+    return (dispatch) => { 
+        dispatch({type:'ADD_DESTINATION'})
+        return fetch('/destinations', {
             method: 'POST',
             body: JSON.stringify(destination),
-            header: {
-                'Content-Type': 'application/json'
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept':'application/json'
             }
         })
         .then(resp => resp.json())
-        .then(destinations => dispatch({
-            type: 'ADDED_DESTINATION',
-            payload: destinations
-        }))
+        .then(destination => {  
+            return (
+             dispatch({
+                type: 'ADDED_DESTINATION',
+                payload: destination   
+                }) 
+            )
+        })
     }
 }

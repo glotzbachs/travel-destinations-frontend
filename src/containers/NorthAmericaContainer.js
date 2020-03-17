@@ -10,17 +10,15 @@ class NorthAmericaContainer extends Component {
     componentDidMount(){
         this.props.fetchDestinations()
     }
-
-    handleOnClick(e){
-
-    }
     
     render() {
 
-        const filteredDestinations=this.props.destinations.filter(destination => destination.location === 'North America')
+        const filteredDestinations=this.props.destinations.filter(destination => {
+           return destination.location === 'North America'         
+        })
 
         const destinations=filteredDestinations.map(destination => {
-           return <li><Destination key={destination.id} name={destination.name} attractions={destination.attractions} handleClick={this.handleOnClick}/><br/></li> 
+            return <li><Destination key={destination.id} {...destination}/><br/></li> 
         })
 
         return (
