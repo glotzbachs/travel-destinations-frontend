@@ -7,18 +7,18 @@ import DestinationForm from '../components/DestinationForm'
 
 class NorthAmericaContainer extends Component {
 
-    componentDidMount(){
-        this.props.fetchDestinations()
-    }
-    
     render() {
+
+        if (this.props.destinations.length <=0){
+            this.props.fetchDestinations()
+        }
 
         const filteredDestinations=this.props.destinations.filter(destination => {
            return destination.location === 'North America'         
         })
 
         const destinations=filteredDestinations.map(destination => {
-            return <li><Destination key={destination.id} {...destination}/><br/></li> 
+            return <li key={destination.id}><Destination {...destination}/><br/></li> 
         })
 
         return (

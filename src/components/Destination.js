@@ -14,8 +14,6 @@ const Destination = (props) => {
             <Link to={`/destinations/${id}`}>
                 <button variant="outline-primary" id={props.id} >{name}</button>
             </Link>
-           
-            <AttractionsContainer attractions={props.attractions}/>
         </div>
     )
 }

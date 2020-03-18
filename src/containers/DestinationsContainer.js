@@ -3,16 +3,17 @@ import {connect} from 'react-redux'
 import {fetchDestinations} from '../actions/fetchDestinations'
 import Destinations from '../components/Destinations'
 import DestinationForm from '../components/DestinationForm'
-import AttractionsContainer from './AttractionsContainer'
-
 
 class DestinationsContainer extends Component {
 
-    componentDidMount(){
-        this.props.fetchDestinations()
-    }
+    
 
     render() {
+
+        if (this.props.destinations.length <=0){
+            this.props.fetchDestinations()
+        }
+
         return (
             <div>
                 <DestinationForm />

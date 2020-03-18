@@ -16,8 +16,9 @@ class Destinations extends Component {
         //     return <LocationButtons key={i} location={location} handleClick={this.handleOnClick}/>
         // })
         // Changed to a NavBar!!
+        
         const destinations = this.props.destinations.map(destination => {
-            return <li><Destination key={destination.id} {...destination}/><br/></li> 
+            return <li key={destination.id}><Destination {...destination}/><br/></li> 
         })
 
         return (

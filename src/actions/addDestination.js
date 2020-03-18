@@ -13,7 +13,7 @@ export const addDestination = (destination) => {
         .then(resp => resp.json())
         .then(destination => {  
             return (
-             dispatch({
+            dispatch({
                 type: 'ADDED_DESTINATION',
                 payload: destination   
                 }) 

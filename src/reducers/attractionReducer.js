@@ -1,35 +1,35 @@
 export default ( 
     state = {
-        destinations:[],
-        loading: false
+        attractions: [],
+        loading: false       
     }, action) => {
-        switch(action.type){
-            case 'FETCHING_DESTINATIONS':
+        switch(action.type){ 
+            case 'FETCHING_ATTRACTIONS':
                 return {
                     ...state,
                     loading: true
                 }
 
-            case 'LOADED_DESTINATIONS':
+            case 'LOADED_ATTRACTIONS':
                 return {
                     destinations: action.payload,
                     loading: false
-                }    
+                }         
 
-            case 'ADD_DESTINATION':
+            case 'ADD_ATTRACTION':
                 // debugger
-                console.log('got dest.')
+                console.log('got attr.')
                 return {
                     ...state,
                     loading: true
                 }
 
-            case 'ADDED_DESTINATION':
-                // debugger
-                console.log('added dest')
+            case 'ADDED_ATTRACTION':
+                debugger
+                console.log('added attr')
                 return {
                     ...state,
-                    destinations: [...state.destinations, action.payload],
+                    attractions: [...state.attractions, action.payload],
                     loading: false
                 }
 
@@ -37,7 +37,3 @@ export default (
                 return state
         }
     }
-
-        
-    
-    
