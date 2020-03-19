@@ -6,11 +6,13 @@ import DestinationForm from '../components/DestinationForm'
 
 class TropicsContainer extends Component {
    
-    render() {
-
+    componentDidMount(){
         if (this.props.destinations.length <=0){
             this.props.fetchDestinations()
         }
+    }
+
+    render() {
 
         const filteredDestinations=this.props.destinations.filter(destination => destination.location === 'Tropical Islands')
 

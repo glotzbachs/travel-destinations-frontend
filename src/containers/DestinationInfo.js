@@ -6,14 +6,15 @@ import AttractionsContainer from './AttractionsContainer'
 import {fetchDestinations} from '../actions/fetchDestinations'
 
 
-
 class DestinationInfo extends Component {
 
-    render() {
-
+    componentDidMount(){
         if (this.props.destinations.length <=0){
             this.props.fetchDestinations()
         }
+    }
+
+    render() {
 
         let destination = this.props.destinations[this.props.match.params.id-1]
 

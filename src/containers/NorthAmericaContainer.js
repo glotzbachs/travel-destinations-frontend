@@ -7,11 +7,13 @@ import DestinationForm from '../components/DestinationForm'
 
 class NorthAmericaContainer extends Component {
 
-    render() {
-
+    componentDidMount(){
         if (this.props.destinations.length <=0){
             this.props.fetchDestinations()
         }
+    }
+
+    render() {
 
         const filteredDestinations=this.props.destinations.filter(destination => {
            return destination.location === 'North America'         
@@ -40,4 +42,5 @@ const mapStatetoProps = state => {
         loading: state.destinationReducer.loading
     }
 }
+
 export default connect(mapStatetoProps,{fetchDestinations})(NorthAmericaContainer)

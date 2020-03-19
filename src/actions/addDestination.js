@@ -12,12 +12,14 @@ export const addDestination = (destination) => {
         })
         .then(resp => resp.json())
         .then(destination => {  
-            return (
-            dispatch({
-                type: 'ADDED_DESTINATION',
-                payload: destination   
-                }) 
-            )
+            if (!destination.error) {
+                dispatch({
+                    type: 'ADDED_DESTINATION',
+                    payload: destination   
+                })  
+            } else {
+                alert(destination.error)
+            }
         })
     }
 }
